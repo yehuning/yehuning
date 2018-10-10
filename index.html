@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">你是人间的四月天 </span><br />
+				<span class="space"/><span class="comments"></span><br />
+				<span class="space"/><span class="comments">我说你是人间的四月天 </span><br />
+				<span class="space"/><span class="comments">笑响 点亮了四面风 </span><br />
+				<span class="space"/><span class="comments">轻灵 在春的光艳中交舞着变</span><br />
+				<span class="space"/><span class="comments">你是四月早天里的云烟</span><br />
+				<span class="space"/>黄昏吹着风的软<br />
+				<span class="space"/>星子在无意中闪 <br />
+				<span class="space"/>细雨点洒在花前<br />
+				<span class="space"/>那轻，那娉婷 <br />
+				<span class="space"/>你是，鲜妍<br />
+				<span class="space"/>百花的冠冕你戴着<br />
+				<span class="space"/>你是 天真 庄严<br />
+				<span class="space"/>你是夜夜的月圆<br />
+				<span class="keyword">&nbsp雪化后那篇鹅黄<br />
+				<span class="space"/>你像新鲜初放芽的绿<br />
+				<span class="space"/>你是柔嫩喜悦<br />
+				<span class="space"/>水光浮动着你梦期待中白莲<br />
+				<span class="space"/>你是一树一树的花开<br />
+				<span class="space"/>是燕 在梁间呢喃 <br />
+				<span class="space"/>你是爱 是暖 是希望<br />
+				<span class="space"/>你是人间的四月天<br />
+				<br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						小懒猪,该起床啦！
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u forever and ever.<br/>
+						<div class="signature">- funing2018</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2018, 9, 3);
+		together.setHours(23);
+		together.setMinutes(17);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
